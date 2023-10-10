@@ -30,3 +30,14 @@ export const fetchImageGeneration = async(payload: OpenAIFetchPayload) => {
   }
   return fetch(`${payload.baseUrl}/v1/images/generations`, initOptions)
 }
+
+// src/providers/openai/api.ts
+export const fetchChatCompletion = async(payload: OpenAIFetchPayload) => {
+   if (!payload.apiKey) {
+    payload.apiKey = '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'
+  }
+  const initOptions = {
+    // same
+  }
+  return fetch(`${payload.baseUrl}/v1/chat/completions`, initOptions)
+}
